@@ -34,9 +34,12 @@
                                 <state key="selected">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="decideWhereToEat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ym-Ib-Pkw"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RAg-L3-EGS">
-                                <rect key="frame" x="16" y="213" width="343" height="29"/>
+                                <rect key="frame" x="16" y="213" width="378" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="$"/>
@@ -46,7 +49,7 @@
                                 </segments>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-bI-uFj">
-                                <rect key="frame" x="16" y="285" width="343" height="29"/>
+                                <rect key="frame" x="16" y="285" width="378" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Close"/>
@@ -63,13 +66,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How far?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JV-yP-zRA">
                                 <rect key="frame" x="16" y="256" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dine-in or take-out?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgB-bZ-sph">
-                                <rect key="frame" x="16" y="323" width="154" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -99,10 +95,117 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Fe-EO-r6c"/>
+                    <connections>
+                        <outlet property="distanceSegmentedControl" destination="cfQ-bI-uFj" id="Y9I-Jd-dpH"/>
+                        <outlet property="priceSegmentedControl" destination="RAg-L3-EGS" id="RLS-hC-u1k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1075.3623188405797" y="138.58695652173915"/>
+        </scene>
+        <!--Result-->
+        <scene sceneID="AVu-4u-TVz">
+            <objects>
+                <viewController storyboardIdentifier="Result" title="Result" id="Z7r-5k-jX4" customClass="ResultViewController" customModule="WhatToEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qra-wg-RQ1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Odu-pJ-CJ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4hG-Y3-Z6z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eBE-k1-8lQ">
+                                <rect key="frame" x="0.0" y="237" width="414" height="499"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="499" id="uhi-Nd-gMb"/>
+                                </constraints>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wDA-Mk-OOE">
+                                <rect key="frame" x="20" y="101" width="128" height="127.66666666666666"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="fUc-aW-nLL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQ8-ff-unt">
+                                <rect key="frame" x="156" y="101" width="238" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="vYk-Dx-XKn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 1 Line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvx-c2-2KV">
+                                <rect key="frame" x="156" y="138" width="238" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="cDb-vj-XTI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 1 Line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeF-es-S0u">
+                                <rect key="frame" x="156" y="157" width="238" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 1 Line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDp-xP-meP">
+                                <rect key="frame" x="156" y="177" width="238" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="lFb-Kj-MlA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joh-A0-vUh">
+                                <rect key="frame" x="156" y="208" width="238" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iDp-xP-meP" firstAttribute="top" secondItem="UeF-es-S0u" secondAttribute="bottom" id="0Kp-s6-3lb"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="leading" secondItem="joh-A0-vUh" secondAttribute="leading" constant="-156" id="1jn-zU-p1i"/>
+                            <constraint firstAttribute="bottom" secondItem="eBE-k1-8lQ" secondAttribute="bottom" id="1xA-Q7-Grq"/>
+                            <constraint firstItem="Gvx-c2-2KV" firstAttribute="top" secondItem="GQ8-ff-unt" secondAttribute="bottom" constant="8" symbolic="YES" id="421-we-1Gb"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="leading" secondItem="4hG-Y3-Z6z" secondAttribute="leadingMargin" constant="-20" id="4Xc-83-3ek"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="trailing" secondItem="iDp-xP-meP" secondAttribute="trailing" constant="20" id="6KQ-yw-Xjw"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="leading" secondItem="Gvx-c2-2KV" secondAttribute="leading" constant="-156" id="D6K-wE-vRM"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="trailing" secondItem="4hG-Y3-Z6z" secondAttribute="trailingMargin" constant="20" id="Fiy-VK-DDp"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="trailing" secondItem="GQ8-ff-unt" secondAttribute="trailing" constant="20" id="FzM-zJ-UMN"/>
+                            <constraint firstItem="iDp-xP-meP" firstAttribute="top" secondItem="Gvx-c2-2KV" secondAttribute="bottom" constant="19" id="JP2-nF-Y7w"/>
+                            <constraint firstItem="GQ8-ff-unt" firstAttribute="top" secondItem="wDA-Mk-OOE" secondAttribute="bottom" constant="-127.66666666666666" id="Omh-cQ-xEt"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="centerX" secondItem="wDA-Mk-OOE" secondAttribute="centerX" constant="123" id="OrT-8J-OTl"/>
+                            <constraint firstItem="joh-A0-vUh" firstAttribute="top" secondItem="iDp-xP-meP" secondAttribute="bottom" constant="11" id="R9X-Yi-7Y2"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="top" secondItem="joh-A0-vUh" secondAttribute="bottom" constant="8" id="UuP-ng-uYC"/>
+                            <constraint firstItem="wDA-Mk-OOE" firstAttribute="top" secondItem="Qra-wg-RQ1" secondAttribute="bottom" constant="81" id="Uvx-MT-qYj"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="trailing" secondItem="joh-A0-vUh" secondAttribute="trailing" constant="20" id="a55-Cu-9k4"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="trailing" secondItem="Gvx-c2-2KV" secondAttribute="trailing" constant="20" id="chM-8r-vyK"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="leading" secondItem="iDp-xP-meP" secondAttribute="leading" constant="-156" id="kbP-Ab-PNW"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="trailing" secondItem="UeF-es-S0u" secondAttribute="trailing" constant="20" id="ms2-BP-eND"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="leading" secondItem="GQ8-ff-unt" secondAttribute="leading" constant="-156" id="snU-CT-Pn6"/>
+                            <constraint firstItem="UeF-es-S0u" firstAttribute="top" secondItem="GQ8-ff-unt" secondAttribute="bottom" constant="27" id="tio-gs-UPV"/>
+                            <constraint firstItem="eBE-k1-8lQ" firstAttribute="leading" secondItem="UeF-es-S0u" secondAttribute="leading" constant="-156" id="xIc-DZ-qfY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="address1Label" destination="Gvx-c2-2KV" id="FJc-o1-Nqf"/>
+                        <outlet property="address2Label" destination="UeF-es-S0u" id="ynN-BQ-Iyt"/>
+                        <outlet property="address3Label" destination="iDp-xP-meP" id="rmN-c4-L4w"/>
+                        <outlet property="nameLabel" destination="GQ8-ff-unt" id="Ylb-iq-hs0"/>
+                        <outlet property="phoneNumberLabel" destination="joh-A0-vUh" id="VBb-bm-JLD"/>
+                        <outlet property="restaurantImageView" destination="wDA-Mk-OOE" id="Z21-5G-QSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1a-IM-dM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="819.29347826086962"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="VcB-vP-vPA">
@@ -116,21 +219,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l3g-z9-s1h">
-                                <rect key="frame" x="15" y="28" width="384" height="666.66666666666663"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="l3g-z9-s1h">
+                                <rect key="frame" x="15" y="28" width="384" height="670"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kK5-v1-tZS">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="125.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="126"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqd-qC-cWr">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="125.33333333333334"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqd-qC-cWr">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Cqd-qC-cWr" secondAttribute="height" multiplier="187:126" id="0wA-6n-ejp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Fast Food" backgroundImage="fast_food">
+                                                <state key="normal" title="American" backgroundImage="american">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -138,8 +241,8 @@
                                                     <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="XQh-nk-QFA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4G-Dz-UUa">
-                                                <rect key="frame" x="197" y="0.0" width="187" height="125.33333333333334"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4G-Dz-UUa">
+                                                <rect key="frame" x="197" y="0.0" width="187" height="126"/>
                                                 <color key="backgroundColor" red="0.12219784509999999" green="0.5531098713" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="u4G-Dz-UUa" secondAttribute="height" multiplier="187:126" id="Ae0-oa-LDl"/>
@@ -157,10 +260,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VhK-cN-xzW">
-                                        <rect key="frame" x="0.0" y="135.33333333333331" width="384" height="125.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="136" width="384" height="126"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbI-LX-SW7">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="125.33333333333334"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbI-LX-SW7">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gbI-LX-SW7" secondAttribute="height" multiplier="187:126" id="3AR-2l-1EA"/>
                                                 </constraints>
@@ -175,15 +278,15 @@
                                                     <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="fGJ-F3-aJh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-GH-E8s">
-                                                <rect key="frame" x="197" y="0.0" width="187" height="125.33333333333334"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-GH-E8s">
+                                                <rect key="frame" x="197" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="iW2-GH-E8s" secondAttribute="height" multiplier="187:126" id="LbX-Hh-z6N"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Mexican" backgroundImage="mexican">
+                                                <state key="normal" title="Chinese" backgroundImage="chinese">
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -193,92 +296,110 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9w4-uv-SJh">
-                                        <rect key="frame" x="0.0" y="270.66666666666674" width="384" height="125.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="272" width="384" height="126"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4C-J6-f9i">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="125.33333333333331"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4C-J6-f9i">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="t4C-J6-f9i" secondAttribute="height" multiplier="187:126" id="Jp9-au-DZb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="American">
+                                                <state key="normal" title="Fast Food" backgroundImage="fast_food">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="Euu-jN-kj5"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8t-ii-HQ8">
-                                                <rect key="frame" x="197" y="0.0" width="187" height="125.33333333333331"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8t-ii-HQ8">
+                                                <rect key="frame" x="197" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="m8t-ii-HQ8" secondAttribute="height" multiplier="187:126" id="dCD-Gi-sdt"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Chinese">
+                                                <state key="normal" title="Japanese" backgroundImage="japanese">
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="XCH-Qk-KD0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lra-SY-xDT">
-                                        <rect key="frame" x="0.0" y="406" width="384" height="125.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="408" width="384" height="126"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWu-rY-l3p">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="125.33333333333337"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWu-rY-l3p">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="UWu-rY-l3p" secondAttribute="height" multiplier="187:126" id="m0c-HO-GLp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Japanese">
+                                                <state key="normal" title="Mediterranean" backgroundImage="mediterranean">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="HBy-H1-Adh"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPY-Vu-JAu">
-                                                <rect key="frame" x="197" y="0.0" width="187" height="125.33333333333337"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPY-Vu-JAu">
+                                                <rect key="frame" x="197" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hPY-Vu-JAu" secondAttribute="height" multiplier="187:126" id="WMa-Ba-8Ek"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Mediterranean">
+                                                <state key="normal" title="Mexican" backgroundImage="mexican">
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="W2g-Qx-WK4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-15-cxi">
-                                        <rect key="frame" x="0.0" y="541.33333333333337" width="384" height="125.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="544" width="384" height="126"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shh-rB-mJk">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="125.33333333333326"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shh-rB-mJk">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="shh-rB-mJk" secondAttribute="height" multiplier="187:126" id="6PE-7S-7KL"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Japanese">
+                                                <state key="normal" title="Pizza">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="wBy-9i-Ive"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dol-G1-0zr">
-                                                <rect key="frame" x="197" y="0.0" width="187" height="125.33333333333326"/>
+                                            <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dol-G1-0zr">
+                                                <rect key="frame" x="197" y="0.0" width="187" height="126"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dol-G1-0zr" secondAttribute="height" multiplier="187:126" id="g5T-Cn-glC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="Mediterranean">
+                                                <state key="normal" title="Vegetarian">
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="categoryPress:" destination="ciu-RE-kXf" eventType="touchUpInside" id="9e0-CN-K1y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -294,15 +415,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="mRc-m3-NgV"/>
                     <connections>
-                        <outlet property="asianButton" destination="u4G-Dz-UUa" id="kOz-Lc-YgP"/>
-                        <outlet property="buffetButton" destination="gbI-LX-SW7" id="vrb-ze-32V"/>
-                        <outlet property="fastFoodButton" destination="Cqd-qC-cWr" id="gQ8-Xi-ch4"/>
-                        <outlet property="mexicanButton" destination="iW2-GH-E8s" id="50c-sW-p0K"/>
+                        <outlet property="americanButton" destination="Cqd-qC-cWr" id="6hw-au-rEY"/>
+                        <outlet property="asianButton" destination="u4G-Dz-UUa" id="DWC-RX-uTe"/>
+                        <outlet property="buffetButton" destination="gbI-LX-SW7" id="El7-ha-mml"/>
+                        <outlet property="chineseButton" destination="iW2-GH-E8s" id="DSn-KU-ZOW"/>
+                        <outlet property="fastFoodButton" destination="t4C-J6-f9i" id="cOf-GT-4yS"/>
+                        <outlet property="japaneseButton" destination="m8t-ii-HQ8" id="0ny-fj-lj4"/>
+                        <outlet property="mediterraneanButton" destination="UWu-rY-l3p" id="y2f-tL-gpx"/>
+                        <outlet property="mexicanButton" destination="hPY-Vu-JAu" id="j0G-4O-vuQ"/>
+                        <outlet property="pizzaButton" destination="shh-rB-mJk" id="4TI-9L-ZAO"/>
+                        <outlet property="vegetarianButton" destination="dol-G1-0zr" id="C9S-3T-YJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6z-ql-IQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2091" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rG4-cP-5Bu">
@@ -324,9 +451,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="american" width="333" height="222"/>
         <image name="asian" width="206" height="116"/>
         <image name="buffet" width="200" height="150"/>
+        <image name="chinese" width="208" height="116"/>
         <image name="fast_food" width="390" height="176"/>
+        <image name="japanese" width="366" height="206"/>
+        <image name="mediterranean" width="233" height="140"/>
         <image name="mexican" width="326" height="163"/>
     </resources>
 </document>
