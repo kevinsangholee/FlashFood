@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSLocationUsageDescription</key>
+	<string>This app uses your current location to find relevant restaurants.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app uses your current location to find relevant restaurants.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

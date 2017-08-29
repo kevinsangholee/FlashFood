@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5865361F5387170033545F /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5865351F5387170033545F /* RestaurantAnnotation.swift */; };
 		3D64FC3A1F3BC98C00B0FE1C /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64FC391F3BC98C00B0FE1C /* CategoryViewController.swift */; };
 		3D6F544A1F3CD7B800468C35 /* YelpAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F54491F3CD7B800468C35 /* YelpAPIData.swift */; };
 		3DAB31851F36A9C7003D0ABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB31841F36A9C7003D0ABD /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D5865351F5387170033545F /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
 		3D64FC391F3BC98C00B0FE1C /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		3D6F54491F3CD7B800468C35 /* YelpAPIData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIData.swift; sourceTree = "<group>"; };
 		3DAB31811F36A9C7003D0ABD /* WhatToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 				3DAB318B1F36A9C7003D0ABD /* Assets.xcassets */,
 				3DAB318D1F36A9C7003D0ABD /* LaunchScreen.storyboard */,
 				3DAB31901F36A9C7003D0ABD /* Info.plist */,
+				3D5865351F5387170033545F /* RestaurantAnnotation.swift */,
 			);
 			path = WhatToEat;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DAE39631F47E4BD0023F7E1 /* ResultViewController.swift in Sources */,
+				3D5865361F5387170033545F /* RestaurantAnnotation.swift in Sources */,
 				3D6F544A1F3CD7B800468C35 /* YelpAPIData.swift in Sources */,
 				3DAB31871F36A9C7003D0ABD /* ViewController.swift in Sources */,
 				3D64FC3A1F3BC98C00B0FE1C /* CategoryViewController.swift in Sources */,

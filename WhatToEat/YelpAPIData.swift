@@ -10,10 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-enum Distance: Int {
-    case close, medium, far
-}
-
 enum Price: Int {
     case oneDolla, twoDolla, threeDolla, fourDolla
 }
@@ -30,6 +26,11 @@ struct Restaurant {
     var phone_number: String
     var image_url: String
 
+}
+
+struct Coordinates {
+    var latitude: Float
+    var longitude: Float
 }
 
 struct YelpApi {
@@ -61,20 +62,16 @@ struct YelpApi {
         "Vietnamese": "vietnamese"
     ]
     
-    static let distanceCalculator: Dictionary<Distance, Int> = [
-        Distance.close: 8046,
-        Distance.medium: 16093,
-        Distance.far: 24140
-    ]
+    static let mileToMeter = 1609
     
-    static func callYelpApi(price: Price, distance: Distance, categories: [String], completionHandler: @escaping (JSON?, Error?) -> ()) {
+    static func callYelpApi(price: Price, distance: Int, categories: [String], location: Coordinates, completionHandler: @escaping (JSON?, Error?) -> ()) {
         
         let parameters: Parameters = [
             "term": "restaurants",
             "price": String(price.rawValue + 1),
-            "radius": distanceCalculator[distance]!,
-            "latitude": 33.697145,
-            "longitude":  -117.771581,
+            "radius": distance * mileToMeter,
+            "latitude": location.latitude,
+            "longitude":  location.longitude,
             "limit": 25,
             "categories": categories.map(convertCategoryToApi).joined(separator: ","),
             "open_now": true
