@@ -17,6 +17,21 @@ class FirstSlideVC: UIViewController {
         swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
+    
+    @IBOutlet weak var narrowDown: UILabel!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //narrowDown.center.x = view.center.x // Place it in the center x of the view.
+        //narrowDown.center.x -= view.bounds.width // Place it on the left of the view with the width = the bounds'width of the view.
+        narrowDown.center.y = view.center.y
+        // animate it from the left to the right
+        UIView.animate(withDuration: 0.75, delay: 0.5, options: [.curveEaseOut], animations: {
+            self.narrowDown.center.y -= self.view.bounds.height / 2 - 66.5
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

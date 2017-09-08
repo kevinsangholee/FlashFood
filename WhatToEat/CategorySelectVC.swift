@@ -36,6 +36,54 @@ class CategorySelectVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var categoryStatement: UILabel!
+    @IBOutlet weak var categoryContinue: UIButton!
+    @IBOutlet weak var categoryContinueCover: UIView!
+    @IBOutlet weak var categoryStatementCover: UIView!
+    @IBOutlet weak var categoryScrollView: UIScrollView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //narrowDown.center.x = view.center.x // Place it in the center x of the view.
+        //narrowDown.center.x -= view.bounds.width // Place it on the left of the view with the width = the bounds'width of the view.
+        categoryScrollView.alpha = 0
+        categoryStatement.alpha = 0
+        categoryStatement.center.y = view.center.y
+        categoryStatementCover.alpha = 1
+        categoryContinue.center.y = view.center.y
+        categoryStatementCover.center.y = view.center.y - view.bounds.height / 2
+        // animate it from the left to the right
+        let when = DispatchTime.now() + 2.3 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+            self.categoryStatement.text = "What kind of food?"
+        }
+        UIView.animate(withDuration: 0.7, delay: 0.1, options: [.curveEaseInOut], animations: {
+            self.categoryStatement.alpha = 1
+        }, completion: nil)
+        UIView.animate(withDuration: 0.3, delay: 2.6, options: [.curveEaseInOut], animations: {
+            self.categoryStatement.center.y -= (self.view.bounds.height / 2) - 46.5
+            self.categoryContinue.center.y += (self.view.bounds.height / 2) - 22
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        UIView.animate(withDuration: 0.3, delay: 2.9, options: [.curveEaseInOut], animations: {
+            self.categoryStatement.center.y += 30
+            self.categoryContinue.center.y -= 30
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        UIView.animate(withDuration: 0.2, delay: 3.2, options: [.curveEaseInOut], animations: {
+            self.categoryStatement.center.y -= 10
+            self.categoryContinue.center.y += 10
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        UIView.animate(withDuration: 0.5, delay: 2.2, animations: {
+            self.categoryScrollView.alpha = 1
+        }, completion: nil)
+        UIView.animate(withDuration: 3, delay: 0, options: [.curveEaseIn], animations: {
+            //self.categoryStatementCover.alpha = 1
+            self.categoryStatementCover.center.y += self.view.bounds.height / 2
+        }, completion: nil)
+    }
+    
     @IBAction func categoryPress(_ sender: UIButton) {
         // If there is only one category left, alert the user that at least one must be selected
         if(sender.isSelected && selectedCategories!.count == 1) {

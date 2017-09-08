@@ -21,6 +21,7 @@ class IntermediaryVC: UIViewController {
 //        swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.left
 //        self.view.addGestureRecognizer(swipeGestureRecognizer)
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
