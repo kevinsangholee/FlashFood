@@ -55,17 +55,17 @@ class CategorySelectVC: UIViewController {
         UIView.animate(withDuration: 0.7, delay: 0.1, options: [.curveEaseInOut], animations: {
             self.categoryStatement.alpha = 1
         }, completion: nil)
-        UIView.animate(withDuration: 0.3, delay: 2.6, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.2, delay: 2.6, options: [.curveEaseInOut], animations: {
             self.categoryStatement.center.y -= (self.view.bounds.height / 2) - 46.5
             self.categoryContinue.center.y += (self.view.bounds.height / 2) - 22
             self.view.layoutIfNeeded()
         }, completion: nil)
-        UIView.animate(withDuration: 0.3, delay: 2.9, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.2, delay: 2.8, options: [.curveEaseInOut], animations: {
             self.categoryStatement.center.y += 35
             self.categoryContinue.center.y -= 35
             self.view.layoutIfNeeded()
         }, completion: nil)
-        UIView.animate(withDuration: 0.3, delay: 3.2, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.2, delay: 3.0, options: [.curveEaseInOut], animations: {
             self.categoryStatement.center.y -= 15
             self.categoryContinue.center.y += 15
             self.view.layoutIfNeeded()
