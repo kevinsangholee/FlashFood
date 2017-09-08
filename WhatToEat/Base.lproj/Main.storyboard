@@ -378,7 +378,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ken-r0-s4l">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ken-r0-s4l">
                                 <rect key="frame" x="20" y="671" width="374" height="52"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
@@ -628,7 +628,7 @@
                                 <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="HZP-jd-e2i" secondAttribute="trailing" id="Mgh-NZ-hXP"/>
-                                    <constraint firstAttribute="bottom" secondItem="HZP-jd-e2i" secondAttribute="bottom" id="WHM-Xp-69S"/>
+                                    <constraint firstAttribute="bottom" secondItem="HZP-jd-e2i" secondAttribute="bottom" constant="-140" id="WHM-Xp-69S"/>
                                     <constraint firstItem="HZP-jd-e2i" firstAttribute="top" secondItem="HhU-qf-tgy" secondAttribute="top" id="kEk-21-Ozb"/>
                                     <constraint firstItem="HZP-jd-e2i" firstAttribute="leading" secondItem="HhU-qf-tgy" secondAttribute="leading" id="nKE-cm-93I"/>
                                 </constraints>
