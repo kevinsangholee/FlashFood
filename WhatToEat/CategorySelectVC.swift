@@ -44,16 +44,11 @@ class CategorySelectVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //narrowDown.center.x = view.center.x // Place it in the center x of the view.
-        //narrowDown.center.x -= view.bounds.width // Place it on the left of the view with the width = the bounds'width of the view.
         categoryScrollView.alpha = 0
         categoryStatement.alpha = 0
         categoryStatement.center.y = view.center.y
-        categoryStatementCover.alpha = 1
         categoryContinue.center.y = view.center.y
-        categoryStatementCover.center.y = view.center.y - view.bounds.height / 2
-        // animate it from the left to the right
-        let when = DispatchTime.now() + 2.3 // change 2 to desired number of seconds
+        let when = DispatchTime.now() + 2.3
             DispatchQueue.main.asyncAfter(deadline: when) {
             self.categoryStatement.text = "What kind of food?"
         }
@@ -66,21 +61,20 @@ class CategorySelectVC: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
         UIView.animate(withDuration: 0.3, delay: 2.9, options: [.curveEaseInOut], animations: {
-            self.categoryStatement.center.y += 30
-            self.categoryContinue.center.y -= 30
+            self.categoryStatement.center.y += 35
+            self.categoryContinue.center.y -= 35
             self.view.layoutIfNeeded()
         }, completion: nil)
-        UIView.animate(withDuration: 0.2, delay: 3.2, options: [.curveEaseInOut], animations: {
-            self.categoryStatement.center.y -= 10
-            self.categoryContinue.center.y += 10
+        UIView.animate(withDuration: 0.3, delay: 3.2, options: [.curveEaseInOut], animations: {
+            self.categoryStatement.center.y -= 15
+            self.categoryContinue.center.y += 15
             self.view.layoutIfNeeded()
         }, completion: nil)
         UIView.animate(withDuration: 0.5, delay: 2.2, animations: {
             self.categoryScrollView.alpha = 1
         }, completion: nil)
-        UIView.animate(withDuration: 3, delay: 0, options: [.curveEaseIn], animations: {
-            //self.categoryStatementCover.alpha = 1
-            self.categoryStatementCover.center.y += self.view.bounds.height / 2
+        UIView.animate(withDuration: 0.5, delay: 1.65, options: [.curveEaseIn], animations: {
+            self.categoryStatementCover.alpha = 1
         }, completion: nil)
     }
     
