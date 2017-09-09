@@ -379,8 +379,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ken-r0-s4l">
-                                <rect key="frame" x="20" y="686" width="374" height="40"/>
+                                <rect key="frame" x="10" y="666" width="394" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4qq-02-HHt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -417,7 +420,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhU-qf-tgy">
-                                <rect key="frame" x="0.0" y="113" width="414" height="563"/>
+                                <rect key="frame" x="0.0" y="113" width="414" height="543"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZP-jd-e2i" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="679"/>
@@ -640,19 +643,17 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="g1J-2L-fHv" firstAttribute="trailing" secondItem="HhU-qf-tgy" secondAttribute="trailing" id="1eK-5Q-Qqi"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Ken-r0-s4l" secondAttribute="leading" id="2iK-MM-cdP"/>
-                            <constraint firstItem="Ken-r0-s4l" firstAttribute="leading" secondItem="ywV-bS-ejZ" secondAttribute="leadingMargin" id="4Jj-lv-c77"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Ken-r0-s4l" secondAttribute="leading" constant="10" id="2iK-MM-cdP"/>
+                            <constraint firstItem="Ken-r0-s4l" firstAttribute="leading" secondItem="ywV-bS-ejZ" secondAttribute="leadingMargin" constant="-10" id="4Jj-lv-c77"/>
                             <constraint firstItem="HZP-jd-e2i" firstAttribute="width" secondItem="ywV-bS-ejZ" secondAttribute="width" id="8As-M4-4kF"/>
                             <constraint firstAttribute="trailing" secondItem="HhU-qf-tgy" secondAttribute="trailing" id="9hF-Yv-RvM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ken-r0-s4l" secondAttribute="trailing" id="Ehe-ww-Rkz"/>
                             <constraint firstItem="HhU-qf-tgy" firstAttribute="top" secondItem="zL1-Ei-KDS" secondAttribute="bottom" constant="93" id="Ek7-FB-PXV"/>
-                            <constraint firstItem="Ken-r0-s4l" firstAttribute="trailing" secondItem="ywV-bS-ejZ" secondAttribute="trailingMargin" id="FpW-cO-SL7"/>
+                            <constraint firstItem="Ken-r0-s4l" firstAttribute="trailing" secondItem="ywV-bS-ejZ" secondAttribute="trailingMargin" constant="10" id="FpW-cO-SL7"/>
+                            <constraint firstItem="Ts5-Di-3fE" firstAttribute="top" secondItem="HhU-qf-tgy" secondAttribute="bottom" constant="80" id="IIz-Ed-yDh"/>
                             <constraint firstItem="g1J-2L-fHv" firstAttribute="leading" secondItem="HhU-qf-tgy" secondAttribute="leading" id="PRv-cR-zwo"/>
                             <constraint firstItem="HhU-qf-tgy" firstAttribute="top" secondItem="g1J-2L-fHv" secondAttribute="bottom" constant="8" symbolic="YES" id="Pmj-4Q-CRT"/>
                             <constraint firstItem="g1J-2L-fHv" firstAttribute="top" secondItem="zL1-Ei-KDS" secondAttribute="bottom" id="Wvw-Ka-hKm"/>
                             <constraint firstItem="HhU-qf-tgy" firstAttribute="leading" secondItem="ywV-bS-ejZ" secondAttribute="leading" id="asR-Re-Son"/>
-                            <constraint firstItem="Ken-r0-s4l" firstAttribute="top" secondItem="HhU-qf-tgy" secondAttribute="bottom" constant="10" id="bd2-g0-M20"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ken-r0-s4l" secondAttribute="trailing" id="fZD-Ek-9Ty"/>
                             <constraint firstItem="Ken-r0-s4l" firstAttribute="centerX" secondItem="ywV-bS-ejZ" secondAttribute="centerX" id="ipm-zv-9GB"/>
                             <constraint firstItem="Ts5-Di-3fE" firstAttribute="top" secondItem="Ken-r0-s4l" secondAttribute="bottom" constant="10" id="l1H-VW-Vsd"/>
                         </constraints>

@@ -36,17 +36,7 @@ class CategorySelectVC: UIViewController {
         } else {
             selectedCategories = allCategoryTitles
         }
-    }
-    
-    @IBOutlet weak var categoryStatement: UILabel!
-    @IBOutlet weak var categoryContinue: UIButton!
-    @IBOutlet weak var categoryStatementCover: UIView!
-    @IBOutlet weak var categoryScrollView: UIScrollView!
-    @IBOutlet weak var categoryStatement2: UILabel!
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        
         categoryScrollView.alpha = 0
         categoryStatement.alpha = 0
         categoryStatement.center.y = view.center.y
@@ -54,7 +44,7 @@ class CategorySelectVC: UIViewController {
         categoryStatement2.center.x = view.center.x
         categoryContinue.center.y = view.center.y
         let when = DispatchTime.now() + 2.3
-            DispatchQueue.main.asyncAfter(deadline: when) {
+        DispatchQueue.main.asyncAfter(deadline: when) {
             self.categoryStatement.text = "What kind of food?"
         }
         UIView.animate(withDuration: 0.7, delay: 0.1, options: [.curveEaseInOut], animations: {
@@ -82,6 +72,16 @@ class CategorySelectVC: UIViewController {
             self.categoryStatement.alpha = 0
         }, completion: nil)
     }
+    
+    @IBOutlet weak var categoryStatement: UILabel!
+    @IBOutlet weak var categoryContinue: UIButton!
+    @IBOutlet weak var categoryStatementCover: UIView!
+    @IBOutlet weak var categoryScrollView: UIScrollView!
+    @IBOutlet weak var categoryStatement2: UILabel!
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+            }
     
     @IBAction func categoryPress(_ sender: UIButton) {
         // If there is only one category left, alert the user that at least one must be selected
