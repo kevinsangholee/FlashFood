@@ -9,6 +9,8 @@
 import UIKit
 
 class CategorySelectVC: UIViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 
     var selectedCategories: [String]?
     var categoryButtons = [UIButton]()
@@ -38,15 +40,18 @@ class CategorySelectVC: UIViewController {
     
     @IBOutlet weak var categoryStatement: UILabel!
     @IBOutlet weak var categoryContinue: UIButton!
-    @IBOutlet weak var categoryContinueCover: UIView!
     @IBOutlet weak var categoryStatementCover: UIView!
     @IBOutlet weak var categoryScrollView: UIScrollView!
+    @IBOutlet weak var categoryStatement2: UILabel!
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         categoryScrollView.alpha = 0
         categoryStatement.alpha = 0
         categoryStatement.center.y = view.center.y
+        categoryStatement2.center.y = view.center.y
+        categoryStatement2.center.x = view.center.x
         categoryContinue.center.y = view.center.y
         let when = DispatchTime.now() + 2.3
             DispatchQueue.main.asyncAfter(deadline: when) {
@@ -56,17 +61,17 @@ class CategorySelectVC: UIViewController {
             self.categoryStatement.alpha = 1
         }, completion: nil)
         UIView.animate(withDuration: 0.2, delay: 2.6, options: [.curveEaseInOut], animations: {
-            self.categoryStatement.center.y -= (self.view.bounds.height / 2) - 46.5
+            self.categoryStatement2.center.y -= (self.view.bounds.height / 2) - 46.5
             self.categoryContinue.center.y += (self.view.bounds.height / 2) - 22
             self.view.layoutIfNeeded()
         }, completion: nil)
         UIView.animate(withDuration: 0.2, delay: 2.8, options: [.curveEaseInOut], animations: {
-            self.categoryStatement.center.y += 35
+            self.categoryStatement2.center.y += 35
             self.categoryContinue.center.y -= 35
             self.view.layoutIfNeeded()
         }, completion: nil)
         UIView.animate(withDuration: 0.2, delay: 3.0, options: [.curveEaseInOut], animations: {
-            self.categoryStatement.center.y -= 15
+            self.categoryStatement2.center.y -= 15
             self.categoryContinue.center.y += 15
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -74,7 +79,7 @@ class CategorySelectVC: UIViewController {
             self.categoryScrollView.alpha = 1
         }, completion: nil)
         UIView.animate(withDuration: 0.5, delay: 1.65, options: [.curveEaseIn], animations: {
-            self.categoryStatementCover.alpha = 1
+            self.categoryStatement.alpha = 0
         }, completion: nil)
     }
     
